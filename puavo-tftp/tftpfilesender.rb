@@ -220,7 +220,7 @@ module PuavoTFTP
     def set_next_data_packet
       @block_num += 1
 
-      block = @data.byteslice((@block_num-1) * @block_size, @block_size)
+      block = @data[(@block_num-1) * @block_size, @block_size]
       @current_block_size = block.size
 
       start = (@block_num-1)*@block_size
